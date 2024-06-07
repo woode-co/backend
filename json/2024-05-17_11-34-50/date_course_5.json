@@ -1,0 +1,50 @@
+{
+    "itinerary": [
+        {
+            "time": "17:00",
+            "category": "cafe",
+            "location": "스타벅스 신촌오거리점",
+            "x": 37.5551906225976,
+            "y": 126.934699199575
+        },
+        {
+            "time": "18:00",
+            "category": "food",
+            "location": "부산완당부산밀면",
+            "x": 37.559240823515,
+            "y": 126.9367555243
+        },
+        {
+            "time": "19:30",
+            "category": "culture",
+            "location": "연세대학교 박물관",
+            "x": 37.5617984733829,
+            "y": 126.937925937699
+        },
+        {
+            "time": "21:30",
+            "category": "landmark",
+            "location": "신촌피아노거리",
+            "x": 37.5557360489237,
+            "y": 126.936950881804
+        }
+    ],
+    "reasoning": [
+        {
+            "step": "스타벅스 신촌오거리점",
+            "reason": "Starting at a cafe is perfect for settling in and having a warm conversation. It provides a relaxed setting to break the ice."
+        },
+        {
+            "step": "부산완당부산밀면",
+            "reason": "An early dinner ensures you have plenty of time to enjoy further activities. Being close to the initial cafe also guarantees a peaceful walk."
+        },
+        {
+            "step": "연세대학교 박물관",
+            "reason": "An insightful cultural experience post-dinner provides great talking points and an engaging activity. The museum's extended dwell time makes it convenient before wrapping up the date."
+        },
+        {
+            "step": "신촌피아노거리",
+            "reason": "Ending the date with a stroll along a themed street allows for a serene and romantic finish to the evening. Its proximity to the museum ensures a smooth transition."
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "itinerary": [
+        {
+            "time": "17:00",
+            "category": "cafe",
+            "location": "메가MGC커피 신촌로터리점",
+            "x": 37.5560881505864,
+            "y": 126.934942872897
+        },
+        {
+            "time": "18:00",
+            "category": "food",
+            "location": "신촌황소곱창 신촌본점",
+            "x": 37.5584524334375,
+            "y": 126.935063049491
+        },
+        {
+            "time": "19:00",
+            "category": "culture",
+            "location": "예스24 원더로크홀",
+            "x": 37.5565739189228,
+            "y": 126.940306947733
+        },
+        {
+            "time": "21:15",
+            "category": "landmark",
+            "location": "신촌피아노거리",
+            "x": 37.5557360489237,
+            "y": 126.936950881804
+        }
+    ],
+    "reasoning": [
+        {
+            "step": "메가MGC커피 신촌로터리점",
+            "reason": "Starting with a cafe provides a relaxed atmosphere to kick-off the date. Located near the current position, it ensures a smooth start."
+        },
+        {
+            "step": "신촌황소곱창 신촌본점",
+            "reason": "A good spot for dinner at 18:00. It's a short walk from the cafe, providing both convenience and delicious food."
+        },
+        {
+            "step": "예스24 원더로크홀",
+            "reason": "An engaging cultural activity that aligns with the user's 'outgoing' taste. The timing allows for around 2 hours, fitting nicely into the 22:00 end time."
+        },
+        {
+            "step": "신촌피아노거리",
+            "reason": "A pleasant way to conclude the evening with a stroll. The lively atmosphere aligns with the user's preference for 'noisy' and 'outdoor' activities."
+        }
+    ]
+}
