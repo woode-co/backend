@@ -64,10 +64,6 @@ def create_user(user: UserSchema, db: Session = Depends(get_db)):
     db.refresh(db_user)
     return True
 
-def save_user_info(user):
-    # db에 저장하는 부분
-    return True
-
 def get_user_info(user_id: str, db):
     # 데이터베이스에서 user_id가 일치하는 첫 번째 사용자 정보를 조회
     db_user = db.query(DBUser).filter(DBUser.user_id == user_id).first()
