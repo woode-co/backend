@@ -107,8 +107,8 @@ This system is designed for individuals or couples seeking an optimized and cust
 ...
 ],
 "reasoning": [
-{{"step": "Starbucks Sinchon Ogeori", "reason": "It's a good time to stop by a cafe and chat with your lover before eating. Also, it's not too far from the current location and is about an eight-minute walk from the next "Cheese Wave Sinchon Branch.""}},
-{{"step": "치즈웨이브 신촌", "reason": "18:30 is a great time for dinner. Likewise, it's great to be in a reasonable position when you think about where to move next. Also, users will love quiet dining."}},
+{{"step": "Starbucks Sinchon Ogeori", "reason": "카페에 들러 연인과 수다를 떨다가 식사하기 좋은 시간입니다. 또한, 현재 위치에서 그리 멀지 않으며, 다음 '치즈웨이브 신촌점'에서 도보로 약 8분 거리에 있습니다."}},
+{{"step": "치즈웨이브 신촌", "reason": "18시 30분은 저녁 식사하기에 아주 좋은 시간입니다. 마찬가지로 다음에 어디로 이동해야 할지 생각할 때 합리적인 위치에 있는 것이 좋습니다. 또한 사용자는 조용한 식사를 좋아할 것입니다."}},
 ...
 ]
 }}
@@ -120,7 +120,8 @@ This system is designed for individuals or couples seeking an optimized and cust
 2. A dwell time of 'food' category must be lower then 60 minute.
 3. A dwell time of 'culture' category must be 120 minute at least.
 4. Total distance of date course must be lower then 1.5km.
-5. Every start time must be earlier then 22:00
+5. Every start time must be earlier then 22:00.
+6. The reason must be written in Korean.
 
 ##############
 """

@@ -71,12 +71,12 @@ data = {
   ]
 }
 
-def extract_locations_and_durations(data: dict) -> list:
+def extract_locations_and_durations(data: dict):
     itinerary = data['itinerary']
     locations = [[item['y'], item['x'], item['location']] for item in itinerary]
     return get_walk_route_duration(locations)
 
-def get_walk_route_duration(locs: list) -> list:
+def get_walk_route_duration(locs: list):
     """
     Tmap api를 사용해 주어진 위치 목록(locs)을 바탕으로 각 위치 간의 도보 소요 시간 계산
 
@@ -97,7 +97,7 @@ def get_walk_route_duration(locs: list) -> list:
 
     # 인접한 위치 쌍에 대한 도보 경로 저장할 리스트 초기화
     durations = [-1 for i in range(len(locs) - 1 )]
-
+    coordinates_list = []
     # 인접한 위치 쌍에 대해 도보 경로 API 요청
     for i in range(len(locs) - 1 ):
         data = {
@@ -110,13 +110,30 @@ def get_walk_route_duration(locs: list) -> list:
         }
         response = requests.post(url, headers=headers, json=data, timeout=10)
         response_data = response.json()
-        
+        if i == 0:
+          print(response_data['features'])
+        tmp_coordinates_list = []
         # 응답 데이터에서 도보 소요 시간 추출
         if 'features' in response_data:
             sp_feature = response_data['features'][0]
             if 'properties' in sp_feature and 'totalTime' in sp_feature['properties']:
                 durations[i] = sp_feature['properties']['totalTime'] // 60
-    return durations
+            for feature in response_data["features"]:
+              geometry = feature["geometry"]
+              if geometry["type"] == "LineString":
+                  for coord in geometry["coordinates"]:
+                      tmp_coordinates_list.append(coord)
+        coordinates_list.extend(tmp_coordinates_list)
+
+
+    unique_coordinates = []
+    previous_coord = None
+    for coord in coordinates_list:
+        if coord != previous_coord:
+            unique_coordinates.append(coord)
+            previous_coord = coord
+
+    return durations, unique_coordinates
 
 if __name__ == '__main__':
     # 테스트 데이터
@@ -128,7 +145,10 @@ if __name__ == '__main__':
     ]
     start_time = time.time()
     # print(f"도보 소요 시간(초): {get_walk_route_duration(l)}")
-    print(f"도보 소요 시간(초): {extract_locations_and_durations(data)}")
+    durations, coordinates_list = extract_locations_and_durations(data)
+    print(f"도보 소요 시간(초): {durations}")
+    print(f"도보 경로 : {coordinates_list}")
+    print(f"도보 points 개수 : {len(coordinates_list)}")
     end_time = time.time()
     elapsed_time = end_time - start_time
     # 4개의 location 기준 1.9초정도 걸림

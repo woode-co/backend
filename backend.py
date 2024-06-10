@@ -98,10 +98,11 @@ def recommend_date_course(course: Course, db: Session = Depends(get_db)):
     user_info = get_user_info(course.user_id, db)
     print(user_info, course.date, course.start_t, course.end_t, course.curr_x, course.curr_y)
     date_course = recsys(user_info = user_info, date = course.date, start_t=course.start_t, end_t=course.end_t, curr_x=course.curr_x, curr_y=course.curr_y)
-    print(date_course)
-    durations = extract_locations_and_durations(date_course)
+    durations, coordinates = extract_locations_and_durations(date_course)
     print(durations)
     date_course['durations'] = durations
+    date_course['coordinates'] = coordinates
+    print(date_course)
     return date_course
 
 # To run the server, use the command:
